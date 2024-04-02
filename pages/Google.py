@@ -97,7 +97,8 @@ if st.button('Get data'):
             depth=depth,
             language_name=language_name,
             location_name=location_name,
-            sort_by="newest"
+            sort_by="newest",
+            postback_url="https://us-central1-force-of-nature-325616.cloudfunctions.net/function-1"
         )
 
         response = client.post("/v3/business_data/google/reviews/task_post", post_data)
