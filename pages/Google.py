@@ -98,8 +98,8 @@ if st.button('Get data'):
             language_name=language_name,
             location_name=location_name,
             sort_by="newest",
-            tag="test",
-            postback_url="https://us-central1-force-of-nature-325616.cloudfunctions.net/function-1?id=$id&tag=$tag"
+            tag="test"
+            
         )
 
         response = client.post("/v3/business_data/google/reviews/task_post", post_data)
