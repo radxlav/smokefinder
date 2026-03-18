@@ -7,6 +7,13 @@ from random import Random
 from google.oauth2 import service_account
 from gsheetsdb import connect
 import gspread
+import sys
+sys.path.insert(0, '..')
+from utils import check_secrets
+
+# Check if secrets are configured before proceeding
+if not check_secrets():
+    st.stop()
 
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],

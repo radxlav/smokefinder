@@ -7,12 +7,19 @@ from google.oauth2 import service_account
 from gsheetsdb import connect
 import gspread
 import plotly.express as px
+import sys
+sys.path.insert(0, '..')
+from utils import check_secrets
 
 st.set_page_config(page_title = 'Smoke Finder',
                     layout='wide',
                     initial_sidebar_state='collapsed')
 
 st.title("Summary")
+
+# Check if secrets are configured before proceeding
+if not check_secrets():
+    st.stop()
 
 def fetch_all_data_from_worksheets(sheet_url):
     # Initialize the dictionary to hold DataFrames

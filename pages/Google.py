@@ -7,6 +7,14 @@ import re
 from google.oauth2 import service_account
 from gsheetsdb import connect
 import gspread
+import sys
+sys.path.insert(0, '..')
+from utils import check_secrets, get_rest_client
+
+# Check if secrets are configured before proceeding
+# This prevents crashes when secrets.toml is missing
+if not check_secrets():
+    st.stop()
 
 credentials = service_account.Credentials.from_service_account_info(
     st.secrets["gcp_service_account"],
