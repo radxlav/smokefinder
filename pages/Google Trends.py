@@ -4,7 +4,6 @@ from client import RestClient
 import pandas as pd
 import time
 from google.oauth2 import service_account
-from gsheetsdb import connect
 import gspread
 import datetime
 from pandas import json_normalize
@@ -22,7 +21,6 @@ credentials = service_account.Credentials.from_service_account_info(
         "https://www.googleapis.com/auth/spreadsheets",
     ],
 )
-conn = connect(credentials=credentials)
 
 def save_to_new_worksheet(df, sheet_url, worksheet_name):
     try:

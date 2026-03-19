@@ -4,7 +4,6 @@ from client import RestClient
 import pandas as pd
 import time
 from google.oauth2 import service_account
-from gsheetsdb import connect
 import gspread
 import plotly.express as px
 import sys
