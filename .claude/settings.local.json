@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sed -i '' '/from gsheetsdb import connect/d' pages/*.py)",
+      "Bash(sed -i '' '/conn = connect\\(credentials=credentials\\)/d' pages/*.py)",
+      "Bash(sed -i '' '/gsheetsdb/d' requirements.txt)"
+    ]
+  }
+}
