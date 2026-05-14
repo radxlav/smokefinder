@@ -161,3 +161,4 @@ cython_debug/
 
 # Streamlit secrets
 .streamlit/secrets.toml
+.claude/scheduled_tasks.json
